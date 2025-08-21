@@ -11,9 +11,20 @@ const VideoBackground = () => {
         loop
         playsInline
       >
-        <source src="/vid.mp4" type="video/mp4" />
+        <source src="/binary.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/30"></div>
+      {/* Base dark overlay for legibility */}
+      <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
+      {/* Subtle emerald tint to match binary theme */}
+      <div className="absolute inset-0 bg-emerald-400/10 mix-blend-overlay pointer-events-none"></div>
+      {/* Soft vignette for focus */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)",
+        }}
+      ></div>
     </div>
   );
 };
