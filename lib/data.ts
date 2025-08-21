@@ -4,7 +4,7 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import wordanalyticsImg from "@/public/me.jpg";
 
 export const links = [
   {
@@ -76,9 +76,9 @@ export const projectsData = [
   //   imageUrl: rmtdevImg,
   // },
   {
-    title: "Code Learning Platform",
+    title: "Code no Learning Platform",
     description:
-      "Interactive coding platform with live code execution, progress tracking, and gamified learning experience. Designed for beginner programmers.",
+      "wala pa hahhaha.",
     tags: ["React", "Next.js", "Node.js", "Tailwind"],
     imageUrl: wordanalyticsImg,
   },
