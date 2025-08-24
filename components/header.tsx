@@ -2,22 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { useState, useEffect } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { links } from "@/lib/data";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
 
   return (
     <motion.header
@@ -63,19 +52,6 @@ export default function Header() {
             </motion.li>
           ))}
         </ul>
-        
-        <motion.button
-          className="ml-4 sm:ml-8 p-2 rounded-full glassmorphism hover:bg-white/10 transition-all"
-          onClick={() => setIsDarkMode(!isDarkMode)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          {isDarkMode ? (
-            <FaSun className="text-yellow-400" />
-          ) : (
-            <FaMoon className="text-blue-400" />
-          )}
-        </motion.button>
       </nav>
     </motion.header>
   );

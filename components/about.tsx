@@ -18,22 +18,34 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-    <p className="mb-3 text-base sm:text-lg">
+    <motion.p
+        className="mb-3 text-base sm:text-lg"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+      >
   I am a <span className="font-medium">4th year Computer Security student</span> 
   with a passion for protecting digital systems. I enjoy solving problems and 
   learning about topics like <span className="font-medium">network security, 
   ethical hacking,</span> and <span className="font-medium">secure software</span>. 
   I am always eager to improve my skills and explore new technologies in 
   <span className="font-medium">cybersecurity</span>.
-</p>
+      </motion.p>
 
 
-      <p className="text-base sm:text-lg">
+      <motion.p
+        className="text-base sm:text-lg"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.05 }}
+      >
         <span className="italic">When I'm not coding</span>, I enjoy playing
         video games, watching movies, I also enjoy{" "}
         <span className="font-medium">learning new things</span>.
      
-      </p>
+      </motion.p>
     </motion.section>
   );
 }

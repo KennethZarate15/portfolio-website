@@ -6,6 +6,7 @@ const VideoBackground = () => {
     <div className="fixed inset-0 z-[-1]">
       <video
         className="absolute inset-0 w-full h-full object-cover"
+        style={{ animation: "videoParallax 16s ease-in-out infinite" }}
         autoPlay
         muted
         loop
@@ -16,7 +17,15 @@ const VideoBackground = () => {
       {/* Base dark overlay for legibility */}
       <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
       {/* Subtle emerald tint to match binary theme */}
-      <div className="absolute inset-0 bg-emerald-400/10 mix-blend-overlay pointer-events-none"></div>
+      <div className="absolute inset-0 bg-emerald-400/15 mix-blend-overlay pointer-events-none"></div>
+      {/* Static scanlines for visual texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient( to bottom, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 2px, transparent 4px )",
+        }}
+      ></div>
       {/* Soft vignette for focus */}
       <div
         className="absolute inset-0 pointer-events-none"

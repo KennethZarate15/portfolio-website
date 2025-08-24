@@ -97,7 +97,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.p
-        className="mb-6 sm:mb-8 text-base sm:text-lg text-gray-600 dark:text-gray-300 px-2 sm:px-0"
+        className="mb-6 sm:mb-8 text-base sm:text-lg text-gray-300 px-2 sm:px-0"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}

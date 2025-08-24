@@ -102,6 +102,7 @@ html.dark {
   .nice-scrollbar::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, var(--gradient-start), var(--gradient-middle));
     border-radius: 9999px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
   }
 }
 
@@ -126,7 +127,77 @@ html.dark {
 }
 
 @keyframes glowPulse {
-  0% { box-shadow: 0 0 0 rgba(132, 204, 22, 0.0), 0 0 0 rgba(16, 185, 129, 0.0); }
-  50% { box-shadow: 0 0 20px rgba(132, 204, 22, 0.35), 0 0 30px rgba(16, 185, 129, 0.25); }
-  100% { box-shadow: 0 0 0 rgba(132, 204, 22, 0.0), 0 0 0 rgba(16, 185, 129, 0.0); }
+  0% { box-shadow: 0 0 0 rgba(16, 185, 129, 0.0), 0 0 0 rgba(132, 204, 22, 0.0); }
+  50% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.35), 0 0 30px rgba(132, 204, 22, 0.25); }
+  100% { box-shadow: 0 0 0 rgba(16, 185, 129, 0.0), 0 0 0 rgba(132, 204, 22, 0.0); }
+}
+
+/* React Vertical Timeline overrides (base mobile-first) */
+.vertical-timeline-element .vertical-timeline-element-content {
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: #e2e8f0 !important; /* slate-200 for a cooler tone */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  text-align: left !important;
+  padding: 1.2rem 1.5rem !important; /* tighter on mobile */
+  border-radius: 0.75rem !important;
+  backdrop-filter: blur(10px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+}
+
+.vertical-timeline-element .vertical-timeline-element-content h3 {
+  background: linear-gradient(110deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.vertical-timeline-element .vertical-timeline-element-content p {
+  color: #cbd5e1 !important; /* slate-300 for body text */
+}
+
+.vertical-timeline-element .vertical-timeline-element-content-arrow {
+  border-right: 0.4rem solid rgba(0, 0, 0, 0.7) !important;
+}
+
+.vertical-timeline-element-date {
+  color: #d1d5db !important; /* tailwind gray-300 */
+}
+
+/* React Vertical Timeline overrides for desktop */
+@media (min-width: 1024px) {
+  /* Content container */
+  .vertical-timeline-element .vertical-timeline-element-content {
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: #e2e8f0 !important; /* slate-200 for a cooler tone */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    text-align: left !important;
+    padding: 1.3rem 2rem !important;
+    border-radius: 0.75rem !important;
+    backdrop-filter: blur(10px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+  }
+
+  /* Ensure text inside content remains readable */
+  .vertical-timeline-element .vertical-timeline-element-content h3 {
+    background: linear-gradient(110deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+  }
+
+  .vertical-timeline-element .vertical-timeline-element-content p {
+    color: #cbd5e1 !important; /* slate-300 for body text */
+  }
+
+  /* Content arrow color */
+  .vertical-timeline-element .vertical-timeline-element-content-arrow {
+    border-right: 0.4rem solid rgba(0, 0, 0, 0.7) !important;
+  }
+
+  /* Date color (if library overrides it on desktop) */
+  .vertical-timeline-element-date {
+    color: #d1d5db !important; /* tailwind gray-300 */
+  }
 }
